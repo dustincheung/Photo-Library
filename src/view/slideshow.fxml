@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SlideshowController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="700.0" minWidth="10.0" prefWidth="480.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="534.0" minHeight="10.0" prefHeight="512.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="168.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <ImageView fx:id="photoDisplay" fitHeight="450.0" fitWidth="550.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+      <Button mnemonicParsing="false" onAction="#back" text="&lt;&lt;" GridPane.halignment="LEFT">
+         <GridPane.margin>
+            <Insets left="25.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#next" text="&gt;&gt;" GridPane.halignment="RIGHT">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#exitSlideshow" text="Exit Slideshow" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="30.0" />
+         </GridPane.margin></Button>
+   </children>
+</GridPane>

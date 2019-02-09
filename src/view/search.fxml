@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="470.0" minWidth="10.0" prefWidth="286.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="514.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="400.0" minHeight="4.0" prefHeight="319.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="301.0" minHeight="10.0" prefHeight="281.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search Photos " GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="10.0" top="10.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Range" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="10.0" top="40.0" />
+         </GridPane.margin>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Starting Date:" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="60.0" left="30.0" />
+         </GridPane.margin>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ending Date:" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="30.0" top="70.0" />
+         </GridPane.margin>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tags:" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="10.0" top="40.0" />
+         </GridPane.margin>
+      </Text>
+      <Button mnemonicParsing="false" onAction="#searchByDate" text="Search by Date" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="20.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#searchByTag" text="Search by Tags" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="300.0" />
+         </GridPane.margin>
+      </Button>
+      <TextField fx:id="tagValueField" maxHeight="-Infinity" maxWidth="183.0" prefHeight="37.0" prefWidth="183.0" promptText="tag value" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+         <GridPane.margin>
+            <Insets bottom="100.0" right="20.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="tagNameField" maxWidth="187.0" prefHeight="37.0" prefWidth="187.0" promptText="tag name" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets bottom="100.0" left="70.0" />
+         </GridPane.margin>
+      </TextField>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="=" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="100.0" left="50.0" />
+         </GridPane.margin>
+      </Text>
+      <Button mnemonicParsing="false" onAction="#addTagToSearch" text="Add tag to search" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="300.0" />
+         </GridPane.margin>
+      </Button>
+      <Label fx:id="displayTags" prefHeight="132.0" prefWidth="472.0" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="50.0" />
+         </GridPane.margin>
+      </Label>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tag-value pairs:" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="225.0" left="20.0" />
+         </GridPane.margin>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dce2e8" height="714.0" stroke="#dbe1e7" strokeType="INSIDE" width="6.0" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="170.0" />
+         </GridPane.margin>
+      </Rectangle>
+      <DatePicker fx:id="startDatePicker" GridPane.halignment="RIGHT">
+         <GridPane.margin>
+            <Insets right="20.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <DatePicker fx:id="endDatePicker" GridPane.halignment="RIGHT">
+         <GridPane.margin>
+            <Insets left="30.0" right="20.0" top="140.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <Button maxHeight="0.0" maxWidth="75.0" mnemonicParsing="false" onAction="#back" text="Back" GridPane.columnIndex="1" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="425.0" top="15.0" />
+         </GridPane.margin>
+      </Button>
+      <ComboBox fx:id="operators" prefHeight="37.0" prefWidth="300.0" promptText="Select operator" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+         <GridPane.margin>
+            <Insets right="70.0" />
+         </GridPane.margin>
+      </ComboBox>
+      <Label prefHeight="25.0" prefWidth="300.0" text="Enter Tags like this: " wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="130.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="25.0" prefWidth="350.0" text="A &amp; B =&gt; (Tag A &amp;) and then add (Tag B &amp;)" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="60.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="25.0" prefWidth="424.0" text="The operator after the tag is chosen from the combo box." wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="215.0" />
+         </GridPane.margin>
+      </Label>
+   </children>
+</GridPane>
